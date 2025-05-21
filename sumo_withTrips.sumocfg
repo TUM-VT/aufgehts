@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+	<input>
+        <net-file value="AFG.net.xml" />
+        <additional-files value="additional.add.xml,taz.xml" />
+        <route-files value="trips/trips_20.11.2023_22_23.trips.xml,trips/trips_20.11.2023_17_18.trips.xml,trips/trips_20.11.2023_9_10.trips.xml,trips/trips_20.11.2023_15_16.trips.xml,trips/trips_20.11.2023_8_9.trips.xml,trips/trips_20.11.2023_5_6.trips.xml,trips/trips_20.11.2023_7_8.trips.xml,trips/trips_20.11.2023_11_12.trips.xml,trips/trips_20.11.2023_20_21.trips.xml,trips/trips_20.11.2023_6_7.trips.xml,trips/trips_20.11.2023_21_22.trips.xml,trips/trips_20.11.2023_13_14.trips.xml,trips/trips_20.11.2023_19_20.trips.xml,trips/trips_20.11.2023_10_11.trips.xml,trips/trips_20.11.2023_16_17.trips.xml,trips/trips_20.11.2023_18_19.trips.xml,trips/trips_20.11.2023_14_15.trips.xml,trips/trips_20.11.2023_12_13.trips.xml" />
+    </input>
+
+    <output>
+        <vehroute-output value="routes_AFG.xml" />
+        <vehroute-output.route-length value="true" />
+        <vehroute-output.last-route value="true" />
+        <vehroute-output.write-unfinished value="true" />
+        <vehroute-output.exit-times value="true" />
+        <vehroute-output.skip-ptlines value="true" />
+    </output>
+
+    <time>
+        <step-length value="1" />
+    </time>
+
+    <processing>
+        <random-depart-offset value="0" />
+        <no-internal-links value="true" />
+        <ignore-junction-blocker value="1" />
+        <ignore-route-errors value="true" />
+	    <time-to-impatience value="7" />
+        <scale value="1" />
+        <time-to-teleport.disconnected value="1" />
+        <time-to-teleport value="160" />
+        <threads value="5" />
+    </processing>
+
+    <routing>
+        <routing-algorithm value="astar" />
+        <weights.random-factor value="1.8" />
+	    <weights.priority-factor value="0.5" />
+        <device.rerouting.probability value="1" />
+        <device.rerouting.period value="60" />
+        <device.rerouting.pre-period value="0" />
+        <device.rerouting.adaptation-steps value="5" />
+        <device.rerouting.adaptation-interval value="180" />
+        <device.rerouting.with-taz value="true" />
+        <device.rerouting.threads value="5" />
+        <device.rerouting.synchronize value="true" />
+    </routing>
+
+    <report>
+        <verbose value="true" />
+        <xml-validation value="never" />
+        <no-warnings value="true" />
+        <error-log value="log.log" />
+    </report>
+
+    <mesoscopic>
+        <mesosim value="True" />
+        <meso-edgelength value="100" />
+        <meso-tauff value="1.5" />
+        <meso-taufj value="1.8" />
+        <meso-taujf value="1.8" />
+        <meso-taujj value="1.8" />
+        <meso-jam-threshold value="-0.8" />
+        <meso-multi-queue value="true" />
+        <meso-junction-control value="true" />
+        <meso-tls-penalty value="0.5" />
+    	<meso-tls-flow-penalty value="0.9" />
+        <meso-minor-penalty value="2" />
+        <meso-overtaking value="true" />
+        <meso-lane-queue value="true" />
+    </mesoscopic>
+
+    <random_number>
+		<seed value="17" />
+    </random_number>
+
+    <gui_only>
+        <tracker-interval value="2" />
+    </gui_only>
+
+</configuration>

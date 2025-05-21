@@ -1,0 +1,10 @@
+  <additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <vTypeDistribution id="DEFAULT_VEHTYPE">
+    <vType id="car" minGap="2" length="5" probability="0.72" lcStrategic="10"/>
+  	<vType id="delivery" minGap="2" length="7" probability="0.08" lcStrategic="10"/>
+  	<vType id="truck" minGap="2" length="11" probability="0.19" maxSpeed="23.6" lcStrategic="10"/>
+  	<vType id="truck_long" minGap="2" length="16" probability="0.01" maxSpeed="23.6" lcStrategic="10"/>
+    </vTypeDistribution>
+    <edgeData id="dump_10" freq="900" file="edge_data_AFG.xml" excludeEmpty="true" />
+    <edgeData id="dump_10" freq="900" file="edge_data_AFG_LKW.xml" excludeEmpty="true" vTypes="truck truck_long"/>
+    </additional>
